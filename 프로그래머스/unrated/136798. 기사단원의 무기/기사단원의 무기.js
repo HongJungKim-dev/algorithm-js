@@ -2,7 +2,7 @@ function solution(number, limit, power) {
     let answer = 0;
     const nums = [];
     const candidates = Array.from({ length: number }, (_, i) => i + 1);
-
+    const temp = [];
     for (const num of candidates) {
         let count = 0;
         const sqrt = Math.sqrt(num)
