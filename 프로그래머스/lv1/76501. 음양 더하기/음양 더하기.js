@@ -1,7 +1,3 @@
 function solution(absolutes, signs) {
-    var answer = 123456789;
-    return absolutes.map((num, index) => {
-        const sign = signs[index]
-        return sign ? num : -num
-    }).reduce((acc, cur) => acc + cur, 0);
+    return absolutes.reduce((acc, cur, index) => acc + cur * (signs[index] ? 1 : -1), 0);
 }
