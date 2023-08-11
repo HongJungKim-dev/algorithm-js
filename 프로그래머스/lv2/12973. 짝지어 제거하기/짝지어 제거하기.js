@@ -1,22 +1,17 @@
 function solution(s)
 {
-    let answer = 0;
     const arr = [];
     
     for (const word of s) {
-        if (arr.length === 0) {
+        const arrLen = arr.length;
+        const peek = arr[arrLen - 1];
+
+        if (arrLen === 0 || peek !== word) {
             arr.push(word);
             continue;
         }
         
-        const peek = arr[arr.length - 1];
-        
-        if (peek === word) {
-            arr.pop();
-            continue;
-        }
-        
-        arr.push(word);
+        arr.pop();
     }
 
     return arr.length === 0 ? 1 : 0;
