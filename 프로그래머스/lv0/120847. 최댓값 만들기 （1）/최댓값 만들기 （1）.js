@@ -1,5 +1,5 @@
 function solution(numbers) {
     numbers.sort((a, b) => a - b);
-    
-    return numbers.pop() * numbers.pop();
+    const popped = numbers.pop();
+    return popped * numbers.pop();
 }
