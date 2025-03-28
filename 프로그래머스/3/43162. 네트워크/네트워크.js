@@ -14,16 +14,27 @@ function solution(n, computers) {
             for (let i = 0; i < n; i++) {
                 if(!visited[i] && computers[currentNode][i] === 1) {
                     queue.push(i);
-                    visited[i] = true;
                }
             }
         }
 
     }
+    
+    const dfs = (node) => {
+        visited[node] = true;
+        
+        for (let i = 0; i < n; i++) {
+            if (!visited[i] && computers[node][i] === 1) {
+                dfs(i);
+                visited[i] = true;
+            }
+        }
+        
+    }
         
     for(let i = 0; i < n; i++) {
         if(!visited[i]) {
-            bfs(i);
+            dfs(i);
             count += 1;
         }
     }
