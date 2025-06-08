@@ -1,23 +1,21 @@
 function solution(word) {
     const alphabets = ['A', 'E', 'I', 'O', 'U'];
-    const alpahbetsLength = alphabets.length;
-    const dictionary = [];
+    const dict = [];
+    const alphabetsLength = alphabets.length;
     const dfs = (current) => {
-        if(current.length > alpahbetsLength) {
+        if(current.length > alphabetsLength) {
             return;
         }
         
         if(current) {
-            dictionary.push(current);
+            dict.push(current);
         }
-        
         
         for(const alphabet of alphabets) {
-            dfs(current + alphabet);
+            dfs(current + alphabet);   
         }
-    };
-    
+    }
     dfs('');
-
-    return dictionary.indexOf(word) + 1;
+    
+    return dict.indexOf(word) + 1;
 }
